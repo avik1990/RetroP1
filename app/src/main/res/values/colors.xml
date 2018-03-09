@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary1">#3F51B5</color>
+    <color name="colorPrimaryDark1">#303F9F</color>
+    <color name="colorAccent1">#FF4081</color>
+
+    <color name="colorPrimary">#F5511e</color>
+    <color name="colorPrimaryDark">#d74315</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="white">#ffffff</color>
+    <color name="inactive_text">#d0cbc6</color>
+    <color name="black">#000000</color>
+    <color name="grey">#A3A3A3</color>
+    <color name="light_grey">#efefef</color>
+    <color name="light_green">#adfb98</color>
+    <color name="dark_green">#3fb291</color>
+    <color name="light_pink">#ffa1a1</color>
+    <color name="grey_textcolor">#737373</color>
+    <color name="dash_grey">#8a8a8a</color>
+    <color name="route_textcolor">#c1c1c1</color>
+    <color name="dark_pink">#ff6b6b</color>
+    <color name="dark_red">#fe0000</color>
+    <color name="ash_grey">#bdbdbd</color>
+    <color name="light_bg">#F8F5F5</color>
+    <color name="light_pink_bg">#F9E1E1</color>
+
+
+
+    <color name="A500">#9C27B0</color>
+    <color name="A400">#F50057</color>
+    <color name="A401">#3F51B5</color>
+    <color name="A402">#00897B</color>
+    <color name="A403">#33691E</color>
+    <color name="A404">#BF360C</color>
+    <color name="A405">#BF360C</color>
+    <color name="A406">#4E342E</color>
+    <color name="A407">#E65100</color>
+    <color name="A408">#0D47A1</color>
+    <color name="A409">#1A237E</color>
+    <color name="A419">#B71C1C</color>
+</resources>
