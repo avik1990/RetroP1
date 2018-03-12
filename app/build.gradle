@@ -36,4 +36,9 @@ dependencies {
     compile "org.projectlombok:lombok:1.16.16"
     annotationProcessor "org.projectlombok:lombok:1.16.16"
     provided 'org.glassfish:javax.annotation:10.0-b28'
+    compile 'de.hdodenhof:circleimageview:2.2.0'
+    //convert string to json file
+    implementation 'com.google.code.gson:gson:2.6.2'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+
 }

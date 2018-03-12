@@ -96,6 +96,11 @@ public class DriverSchedule extends BaseObservable {
         @SerializedName("kid_name")
         @Expose
         public String kid_name;
+
+
+        @SerializedName("kid_image")
+        @Expose
+        public String kid_image;
     }
 
     public class Driver_details1 {

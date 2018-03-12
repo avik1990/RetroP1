@@ -9,11 +9,16 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.retrofit.prac.adapter.DriverScheduleAdapter;
 import com.retrofit.prac.databinding.ActivityMainBinding;
 import com.retrofit.prac.model.DriverSchedule;
 import com.retrofit.prac.retrofit.api.ApiServices;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 
 import retrofit2.Call;
@@ -30,13 +35,22 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     DriverSchedule list_driver;
     DriverScheduleAdapter adapter;
+    Gson gson;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mContext = this;
         initiew();
-        parsejsondata();
+
+        ////for parsing data from URL
+        //parsejsondata();
+
+        ////////for reading data from json files
+        gson=new Gson();
+        inflateadapter();
+
     }
 
     private void initiew() {
@@ -46,6 +60,39 @@ public class MainActivity extends AppCompatActivity {
         pDialog.setCancelable(false);
         pDialog.setCanceledOnTouchOutside(false);
     }
+
+    private String readFileFromRawDirectory(int resourceId){
+        InputStream iStream = this.getResources().openRawResource(resourceId);
+        ByteArrayOutputStream byteStream = null;
+        try {
+            byte[] buffer = new byte[iStream.available()];
+            iStream.read(buffer);
+            byteStream = new ByteArrayOutputStream();
+            byteStream.write(buffer);
+            byteStream.close();
+            iStream.close();
+
+//inflateadapter();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return byteStream.toString();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     private void parsejsondata() {
         Retrofit retrofit = new Retrofit.Builder()
@@ -82,6 +129,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void inflateadapter() {
+
+        ////for reading file from raw folder otherwise it's not required
+        list_driver= gson.fromJson(readFileFromRawDirectory(R.raw.driverschedule), new TypeToken<DriverSchedule>(){}.getType());
+         ////////////////////////////////////////
+
         adapter = new DriverScheduleAdapter(mContext, list_driver.getData().getSclist());
         binding.rvRecycle.setLayoutManager(new LinearLayoutManager(this));
         binding.rvRecycle.setAdapter(adapter);
