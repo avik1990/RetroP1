@@ -19,21 +19,21 @@ public class DriverSchedule extends BaseObservable {
 
     @SerializedName("status")
     @Expose
-    String status;
+    public String status;
 
     @SerializedName("msg")
     @Expose
-    String msg;
+    public String msg;
 
     @SerializedName("data")
     @Expose
-    Data data;
+    public Data data;
 
     public class Data {
         @Getter
         @SerializedName("schedules")
         @Expose
-        List<Schedules> schedules;
+        List<Schedules> sclist;
         @Getter
         @SerializedName("driver_details")
         @Expose
@@ -41,49 +41,73 @@ public class DriverSchedule extends BaseObservable {
     }
 
     public class Schedules {
+        @Getter
         @SerializedName("is_active")
         @Expose
-        String is_active;
+        public String is_active;
 
+        @Getter
         @SerializedName("route_details")
         @Expose
-        Route_details route_details;
+        public Route_details route_details;
 
+        @Getter
         @SerializedName("alloted_kids")
         @Expose
-        List<Alloted_kids> alloted_kids;
+        public List<Alloted_kids> alloted_kids;
     }
 
     public class Driver_details {
+        @Getter
         @SerializedName("driver_details")
         @Expose
-        Driver_details1 driver_details;
+        public Driver_details1 driver_details;
     }
 
     public class Route_details {
         @SerializedName("ds_id")
         @Expose
-        String ds_id;
+        public String ds_id;
 
         @SerializedName("kidpool_route_id")
         @Expose
-        String kidpool_route_id;
+        public String kidpool_route_id;
+
+
+        public String getDs_id() {
+            return ds_id;
+        }
+
+        public void setDs_id(String ds_id) {
+            this.ds_id = ds_id;
+        }
+
+        public String getKidpool_route_id() {
+            return kidpool_route_id;
+        }
+
+        public void setKidpool_route_id(String kidpool_route_id) {
+            this.kidpool_route_id = kidpool_route_id;
+        }
     }
 
     public class Alloted_kids {
+        @Getter
         @SerializedName("kid_name")
         @Expose
-        String kid_name;
+        public String kid_name;
     }
 
     public class Driver_details1 {
+        @Getter
         @SerializedName("driver_id")
         @Expose
-        String driver_id;
+        public String driver_id;
 
+        @Getter
         @SerializedName("driver_name")
         @Expose
-        String driver_name;
+        public String driver_name;
     }
 
 

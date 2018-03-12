@@ -3,10 +3,9 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto">
 
     <data>
-
         <variable
-            name="driverSchedule"
-            type="com.retrofit.prac.model.DriverSchedule" />
+            name="routedetails"
+            type="com.retrofit.prac.model.DriverSchedule.Route_details" />
     </data>
 
     <android.support.v7.widget.CardView
@@ -36,21 +35,19 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@{driverSchedule.kidpool_route_id}"
+                    android:text="@{routedetails.ds_id}"
                     android:textColor="@color/colorPrimary"
                     android:textSize="@dimen/twenty"
                     android:textStyle="bold" />
-
             </LinearLayout>
 
             <TextView
                 android:id="@+id/tv_vehicle_number"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="@{driverSchedule.}"
+                android:text="@{routedetails.kidpool_route_id}"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                 android:textColor="@color/colorPrimary" />
-
 
             <TextView
                 android:id="@+id/tv_trip_way"
@@ -59,7 +56,6 @@
                 android:layout_marginTop="@dimen/five"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
-                android:text="Chingrighata > NiccoPark > SDF > College More > DLF 1 > Eco Space"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                 android:textColor="@color/grey_textcolor"
                 android:textStyle="normal" />
